@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script defer src="script.js"> </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Movie Manager</h1>
+    <!-- input card for movie title and rating -->
+    <div class="card">
+        <div class="card-header d-flex flex-row d-flex justify-content-between">
+            Add Movie
+            <button type="button" class="btn btn-primary" id="toggleNewMovie">Hide</button>
+        </div>
+        <div class="input-group mb-3 card-body" id="newMovieCard">
+            <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="title">
+            <span class="input-group-text" id="inputGroup-sizing-default">Rating</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="rating">
+            <span class="input-group-text" id="inputGroup-sizing-default">Watched</span>
+            <div class='form-check form-control'>
+                <input class="form-check-input" type="checkbox" value="" id="watched" checked>
+            </div>
+            <button type="button" class="btn btn-primary" id="addMovie">Add</button>
+        </div>
+    </div>
+    </div>
+
+        <!-- filter for movies above input rating-->
+    <div class="card">
+        <div class="card-header d-flex flex-row d-flex justify-content-between">
+            Filter
+            <button type="button" class="btn btn-primary" id="toggleFilter">Hide</button>
+        </div>
+        <div class="input-group mb-3 card-body" id="filterCard">
+            <span class="input-group-text" id="inputGroup-sizing-default">Ratings Above</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="ratingFilter">
+            <button type="button" class="btn btn-primary" id="filter">Filter</button>
+            <!-- clear filter-->
+            <button type="button" class="btn btn-danger" id="clearFilter">Clear</button>
+        </div>
+    </div>
+    <!-- bootstrap table that displays each movit title, ranking, and a checkbox for if it has or hasn't been watched -->
+    <div class="card">
+        <div class="card-header">
+            Movies
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Watched</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="movieTable">
+                    <!-- <tr>
+                        <td>Movie Title</td>
+                        <td>Movie Ranking</td>
+                        <td><input type="checkbox" name="watched" id="watched"></td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <!--Display total-->
+            <!--Flexbox div-->
+            <div class="d-flex flex-row d-flex justify-content-between">    
+                <div id="total"></div>
+                <button type="button" class="btn btn-danger" id="deleteAll">Delete All</button>
+            </div>
+        </div>
+    </div>
+    <div id="notifications">
+    </div>
+</body>
+</html>
